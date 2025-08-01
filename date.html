@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Info</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      width: 250px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: hotpink;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+    }
+    .heart {
+      color: red;
+      font-size: 100px;
+      animation: beat 1s infinite;
+      margin-top: 40px;
+    }
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    #finalMsg {
+      display: none;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Let's go on a DATE 🥰</h2>
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="text" id="location" placeholder="Location">
+  <input type="text" id="day" placeholder="Day">
+  <input type="text" id="date" placeholder="Date">
+  <input type="text" id="time" placeholder="Time">
+  <button onclick="showFinal()">Submit</button>
+
+  <div id="finalMsg">
+    <div class="heart">❤️</div>
+    <h2>Yea you are perfect for MR. shanuuuuu 💘</h2>
+    <h3>HE IS IN LOVE WITH YOU X1000000000 TIMES</h3>
+    <p>💌 MAKE SURE NOT TO HURT HIM 💌</p>
+  </div>
+
+  <script>
+    function showFinal() {
+      document.getElementById("finalMsg").style.display = "block";
+    }
+  </script>
+</body>
+</html>

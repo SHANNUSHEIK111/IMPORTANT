@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Love Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #ffc0cb, #ffe6f0);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      text-align: center;
+      color: #d1006c;
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-size: 2.5em;
+    }
+
+    input {
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 8px;
+      margin-top: 20px;
+      border: 2px solid deeppink;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      background-color: hotpink;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* HEART ANIMATION STYLING */
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatUp 8s linear infinite;
+      opacity: 0.6;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -8px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -8px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(1) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter the secret name 💗</h1>
+  <input type="text" id="nameInput" placeholder="Type here...">
+  <br>
+  <button onclick="checkName()">Enter</button>
+
+  <script>
+    function checkName() {
+      const input = document.getElementById('nameInput').value.toUpperCase();
+      if (input === "BANGARAM") {
+        window.location.href = "love.html";
+      } else {
+        alert("Oops! Only if you are BANGARAM 😘");
+      }
+    }
+
+    // Generate floating hearts all over the page
+    for (let i = 0; i < 100; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+      heart.style.width = heart.style.height = (10 + Math.random() * 20) + "px";
+      heart.style.background = ["#ffb6c1", "#ff69b4", "#ffc0cb", "#ff1493"][Math.floor(Math.random() * 4)];
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>

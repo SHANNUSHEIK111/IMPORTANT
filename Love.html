@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+      font-family: sans-serif;
+      padding-top: 100px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 22px;
+      margin: 20px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+    }
+    .yes { background-color: deeppink; color: white; }
+    .no { background-color: lightgray; }
+  </style>
+</head>
+<body>
+  <h1>DO YOU LOVE ME? 💖</h1>
+  <button class="yes" onclick="yesClicked()">YES</button>
+  <button class="no" onclick="alert('NO is disabled 😛')">NO</button>
+
+  <script>
+    function yesClicked() {
+      window.location.href = "date.html";
+    }
+  </script>
+</body>
+</html>
